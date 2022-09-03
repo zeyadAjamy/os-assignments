@@ -1,0 +1,500 @@
+    4  npm run dev
+    5  sudo iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 3000 -j REDIRECT --to-ports 80
+    6  sudo iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 80 -j REDIRECT --to-ports 3000
+    7  sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 3000
+    8  npm run dev
+    9  clear
+   10  npm run dev
+   11  git push
+   12  sudo git add *
+   13  cd ..
+   14  clear
+   15  sudo git pull 
+   16  sudo git push origin master
+   17  clear
+   18  cd ../frontend
+   19  clear
+   20  sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 3000
+   21  npm run dev
+   22  sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 3000
+   23  npm run dev
+   24  sudo iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 80 -j REDIRECT --to-ports 3000
+   25  npm run dev
+   26  cd backend/
+   27  clear
+   28  sudo docker-compose up --build
+   29  clear
+   30  sudo docker-compose up --build
+   31  clear
+   32  cd ..
+   33  sudo git pull
+   34  cd backend
+   35  sudo docker-compose up --build
+   36  clear
+   37  sudo cd ../
+   38  cd ../
+   39  clear
+   40  sudo git pull *
+   41  sudo git pul
+   42  clear
+   43  cd ../backend  && sudo docker-compose up --build
+   44  cd backend  && sudo docker-compose up --build
+   45  cleaer
+   46  clear
+   47  sudo docker-compose up --build
+   48  reboot
+   49  shutdown -P 0
+   50  cd ../
+   51  cd backend
+   52  clear
+   53  cd ../frontend
+   54  clear
+   55  sudo iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 80 -j REDIRECT --to-ports 3000
+   56  npm run dev
+   57  clear
+   58  npm run dev
+   59  code . && exit
+   60  code .
+   61  sudo apt-get update
+   62  cd ../backend
+   63  clear
+   64  docker exec -it api bash
+   65  sudo docker exec -it api bash
+   66  cd ..
+   67  clear
+   68  sudo git add *
+   69  sudo git commit -m "adds create competition route"
+   70  sudo git push origin master
+   71  sudo git pull 
+   72  sudo git push origin master
+   73  clear
+   74  sudo docker-compose up --build
+   75  sudo iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 80 -j REDIRECT --to-ports 3000
+   76  npm run dev
+   77  clear
+   78  cd ..
+   79  cd ~
+   80  clear
+   81  sudo apt-get update
+   82  sudo apt-get upgrade
+   83  clear
+   84  reboot
+   85  sudo docker-compose up --build
+   86  cd ../frontedn
+   87  clear
+   88  cd ../frontend
+   89  clear
+   90  sudo iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 80 -j REDIRECT --to-ports 3000
+   91  npm run dev
+   92  code .
+   93  npm run dev
+   94  shutdown -P 0
+   95  cd ../frontend
+   96  code .
+   97  exit
+   98  git pull
+   99  sudo git pull
+  100  clear
+  101  cd ../backend
+  102  cd backend
+  103  sudo docker-compose up --build
+  104  cd ../frontend
+  105  clear
+  106  sudo iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 80 -j REDIRECT --to-ports 3000
+  107  npm run dev
+  108  shutdown -P 0
+  109  code . && exit
+  110  cd ../frontend
+  111  clear
+  112  npm run dev
+  113  sudo iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 80 -j REDIRECT --to-ports 3000
+  114  clear
+  115  npm run dev
+  116  shutdown -P 0
+  117  code . && exit
+  118  sudo apt-get update
+  119  sudo apt-get upgrade
+  120  cleat
+  121  clear
+  122  reboot
+  123  sudo git pull
+  124  reboot
+  125  sudo apt-get update
+  126  sudo apt-get upgrade
+  127  clearr
+  128  clear
+  129  exit
+  130  cd ../frontend/
+  131  sudo iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 80 -j REDIRECT --to-ports 3000
+  132  npm run dev
+  133  reboot
+  134  sudo docker-compose up --build
+  135  code . && exit
+  136  sudo apt-get update
+  137  sudo sed -i -e 's|disco|focal|g' /etc/apt/sources.list
+  138  sudo apt update
+  139  clear
+  140  cd mnt/
+  141  cd /mnt
+  142  ls
+  143  cd 01D7C50FFEEFD1F0
+  144  ls
+  145  cd Projects/
+  146  clear
+  147  ls
+  148  cd urfu
+  149  ls
+  150  cd uralsp/
+  151  clear
+  152  ls
+  153  clear
+  154  cd backend/
+  155  sudo docker-compose up --build
+  156  cd ../frontend 
+  157  sudo iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 80 -j REDIRECT --to-ports 3000
+  158  clear
+  159  npm run dev
+  160  reboot
+  161  npm run dev
+  162  clar
+  163  code . && exit
+  164  cd mnt/
+  165  cd /mnt/
+  166  ls
+  167  cd 01D7C50FFEEFD1F0
+  168  clear
+  169  cd Projects
+  170  ls
+  171  cd urfu/uralsp
+  172  cd backend
+  173  clear
+  174  sudo docker-compose up --build
+  175  cd frontend
+  176  clear
+  177  sudo iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 80 -j REDIRECT --to-ports 3000
+  178  clear
+  179  npm run dev
+  180  clear
+  181  shutdown -P 0
+  182  code . && exit
+  183  sudo git add *
+  184  sudo git commit -m "creates competition' creation route'
+  185  sudo git commit -m "creates competition' creation route"
+  186  sudo git push origin master
+  187  exit
+  188  cd ../
+  189  clear
+  190  sudo git pull
+  191  sudo git commit -m "creates competition' creation route."
+  192  sudo git add *
+  193  sudo git commit -m "creates competition' creation route."
+  194  sudo git push origin master
+  195  sudo git pull
+  196  sudo git config pull.rebase false
+  197  sudo git pull
+  198  sudo git push origin master
+  199  sudo git config pull.ff only
+  200  sudo git pull
+  201  sudo git config pull.rebase true
+  202  sudo git pull
+  203  sudo git commit -m "creates competition' creation route."
+  204  sudo git add *
+  205  sudo git commit -m "creates competition' creation route."
+  206  sudo git pull
+  207  git rm uralsp
+  208  sudo git add *
+  209  sudo git pull
+  210  sudo git commit -m "creates competition' creation route."
+  211  sudo git pull
+  212  sudo git config pull.ff only
+  213  sudo git pull
+  214  sudo git push origin master
+  215  sudo git push --help
+  216  cd ../frontend
+  217  clear
+  218  sudo iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 80 -j REDIRECT --to-ports 3000
+  219  code .
+  220  npm run dev
+  221  sudo docker-compose up --build
+  222  sudo git clone https://github.com/peroovy/uralsp/tree/master
+  223  sudo git clone https://github.com/peroovy/uralsp/
+  224  clear
+  225  cd uralsp/frontend
+  226  clear
+  227  npm i
+  228  clear
+  229  npm i
+  230  git clone https://github.com/peroovy/uralsp
+  231  shutdown -P 0
+  232  npm run dev
+  233  clear
+  234  reboot
+  235  cd ../
+  236  clear
+  237  sudo git pull
+  238  reboot
+  239  npm run dev
+  240  clear
+  241  npm i
+  242  clear
+  243  sudo iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 80 -j REDIRECT --to-ports 3000
+  244  npm run dev
+  245  cd ../
+  246  sudo git push
+  247  clear
+  248  sudo git push origin master
+  249  sudo add *
+  250  sudo git add *
+  251  sudo git commit -m "creates competition' creation respond"
+  252  sudo git push origin master
+  253  clear
+  254  sudo git pull
+  255  clear
+  256  cd backend/
+  257  sudo docker-compose up --build
+  258  clear
+  259  reset
+  260  sudo docker-compose up --build
+  261  cd ../frontend
+  262  clear
+  263  npm run dev
+  264  clear
+  265  code .
+  266  clear
+  267  cd ../
+  268  sudo git add *
+  269  sudo git commit -m "connected the apis for competition control route"
+  270  sudo git push origin master
+  271  clear
+  272  sudo git pull
+  273  clear
+  274  shutdown -p 0
+  275  shutdown -P 0
+  276  sudo git pull
+  277  cd backend
+  278  sudo docker-compose up --build
+  279  clear
+  280  reset
+  281  sudo docker-compose up --build
+  282  cd ../frontend
+  283  sudo iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 80 -j REDIRECT --to-ports 3000
+  284  code .
+  285  npm run dev
+  286  clear
+  287  npm run dev
+  288  clear
+  289  reboot
+  290  nano namlist
+  291  sort -r namlist > namelist.reversed
+  292  cat namelist.reversed
+  293  sudo apt install rename
+  294  rename --help
+  295  ls
+  296  rename namlist namelist
+  297  hostname --help
+  298  hostname 
+  299  help ls
+  300  help
+  301  clear
+  302  hostname
+  303  less
+  304  head -n 1 namelist
+  305  head -n 1 namlist
+  306  tail -n 1 namlist
+  307  cd mnt/
+  308  cd mnt
+  309  ls
+  310  jobs
+  311  shutdown -P 3
+  312  jobs
+  313  shutdown -c
+  314  clear
+  315  shutdown -P 0
+  316  jobs
+  317  clear
+  318  cd frontend && code . 
+  319  sudo iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 80 -j REDIRECT --to-ports 3000
+  320  clear
+  321  npm run dev
+  322  cd backend
+  323  sudo docker-compose up --build
+  324  cd ..
+  325  clear
+  326  sudo git pull
+  327  sudo git add *
+  328  clear
+  329  sudo commit -m "connects the api for participant page & configure the requests route- N.B: requests route: work under progress./Dockerfile"
+  330  sudo git commit -m "connects the api for participant page & configure the requests route- N.B: requests route: work under progress./Dockerfile"
+  331  clear
+  332  sudo push origin master
+  333  sudo git push origin master
+  334  clear
+  335  ؤثمشق
+  336  clear
+  337  exit
+  338  cd ../frontend
+  339  clear
+  340  sudo iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 80 -j REDIRECT --to-ports 3000
+  341  code . && npm run dev
+  342  cd 
+  343  clear
+  344  reset
+  345  shutdown -P 0
+  346  npm run dev
+  347  npm & run dev
+  348  clear
+  349  npm& run dev
+  350  npm run dev
+  351  jobs -l
+  352  fg %2
+  353  jobs
+  354  fg %2
+  355  jobs
+  356  bg %2
+  357  jobs 
+  358  npm run dev
+  359  jobbs
+  360  jobs -l
+  361  bg
+  362  jobs
+  363  disown
+  364  jobs
+  365  clear
+  366  mkdir OS
+  367  cd OS
+  368  clear
+  369  echo "# OS-Assignments" >> README.md
+  370  git init
+  371  git add README.md
+  372  git commit -m "first commit"
+  373  git branch -M main
+  374  git remote add origin git@github.com:zeyadAjamy/OS-Assignments.git
+  375  git push -u origin main
+  376  git pull https://github.com/khaledismaeel/OS-Homework
+  377  sudo git pull https://github.com/khaledismaeel/OS-Homework
+  378  sudo git clone https://github.com/khaledismaeel/OS-Homework
+  379  clear
+  380  jobs -l
+  381  clear
+  382  ps
+  383  pa bash
+  384  ps bash
+  385  ps aux
+  386  ps aux | less
+  387  fg %1
+  388  ps aux | grep npm
+  389  own 11331
+  390  man kill
+  391  kill 11331
+  392  ps aux | grep
+  393  kill 13243
+  394  cleaer
+  395  clear
+  396  ps aux
+  397  ps aux | grep svelte
+  398  ps aux | grep dev
+  399  kill 11362
+  400  clear
+  401  npm & run dev
+  402  npm run& dev
+  403  npm run & dev
+  404  npm run& dev
+  405  dev
+  406  npm run dev &
+  407  jobs 
+  408  stop job#1
+  409  stop job #1
+  410  suod stop job #1
+  411  sudo stop job #1
+  412  stopjob#1
+  413  stopjob #1
+  414  stop 1
+  415  clear
+  416  screen
+  417  sudo apt install screen
+  418  clear
+  419  screen
+  420  stop
+  421  man stop
+  422  stop -p
+  423  stop -h
+  424  stop --help
+  425  cleaer
+  426  clear
+  427  sudo apt install stop
+  428  clear
+  429  npm run dev &
+  430  clear
+  431  jobs 
+  432  kill -stop %2
+  433  kill -Stop %2
+  434  jobs
+  435  fg %2
+  436  jobs
+  437  kill -9 %2
+  438  jobs
+  439  jobs -h
+  440  jobs --help
+  441  jobs -r -l
+  442  ls
+  443  clear
+  444  ls | sort > sorted.txt
+  445  cat sorted.txt
+  446  rm sorted.txt
+  447  clear
+  448  touch renameMe
+  449  mv renameMe me
+  450  ls | grep me
+  451  cd me 
+  452  ls
+  453  rm me
+  454  clear
+  455  cd ~
+  456  clear
+  457  nano ex01.sh
+  458  ls
+  459  rm ex01.sh
+  460  ./ex2.sh
+  461  ./ex1.sh
+  462  sudo ./ex1.sh
+  463  bash ex1.sh
+  464  cd week01
+  465  ls
+  466  cat ex1.txt
+  467  ls
+  468  history 
+  469  history ls
+  470  history -S
+  471  nano ex2.sh
+  472  bash ex2.sh
+  473  cat week01/ex2.txt
+  474  cat ex2.txt
+  475  cat ex2.sh
+  476  nano ex2.sh
+  477  bash ex2.sh
+  478  cat ex2.txt
+  479  bash ex2.sh
+  480  nano ex2.sh
+  481  bash ex2.sh
+  482  nano ex2.sh
+  483  bash ex2.sh
+  484  history
+  485  history >ex2.txt
+  486  cat ex2.txt
+  487  clear
+  488  bash ex2.sh
+  489  nano ex2.sh
+  490  bash ex2.sh
+  491  nano ex2.sh
+  492  bash ex2.sh
+  493  cat ex2.txt
+  494  nano ex1.sh
+  495  # create the output file -ex2.txt
+  496  touch ex2.txt
+  497  # print the history into the ex2.txt
+  498  history > ex2.txt
+  499  exit
+  500  # create the output file -ex2.txt
+  501  touch ex2.txt
+  502  # print the history into the ex2.txt
+  503  history > ex2.txt

@@ -1,0 +1,16 @@
+Templates
+Public
+Music
+Videos
+NewFolder
+NetBeansProjects
+Documents
+node_modules
+package-lock.json
+Final Quiz of Excercise Physiology Attempt review.pdf
+Desktop
+snap
+Pictures
+Downloads
+ex2.txt
+week01
