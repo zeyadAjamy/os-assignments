@@ -1,1 +1,1 @@
-# OS-Assignments
+# Operating Systems - Assignments repo
