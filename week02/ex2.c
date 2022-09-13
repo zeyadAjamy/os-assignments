@@ -17,7 +17,6 @@ int main()
     }
 
     // print string in reverse order
-    printf("The string in reverse order is: ");
     printf("\"");
     for (i = strlen(str) - 1; i >= 0; i--)
     {

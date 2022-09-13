@@ -12,7 +12,7 @@ int main(){
 
     // Assign maximum values to variables
     a = INT_MAX;
-    b = SHRT_MAX;
+    b = USHRT_MAX;
     c = LONG_MAX;
     d = FLT_MAX;
     e = DBL_MAX;

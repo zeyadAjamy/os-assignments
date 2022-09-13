@@ -32,7 +32,7 @@ void regularPattern(int n){
 int main() {
     trianglePattern(7);
     printf("\n");
-    upsideDownPattern(4);
+    upsideDownPattern(3);
     printf("\n");
     regularPattern(7);
 
