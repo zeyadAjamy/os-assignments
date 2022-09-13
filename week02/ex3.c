@@ -2,22 +2,24 @@
 #include <stdlib.h>
 #include <string.h>
 
-int convert(char x[256], int s, int t)
+long long convert(long long x, int s, int t)
 {
+    // convert long long to string 
+    char str[100];
+    sprintf(str, "%lld", x);
+
     // check is the source and target base are valid, [2,10] 
     if (s < 2 || s > 10 || t < 2 || t > 10)
     {
-        printf("cannot convert!\n");
-        return 0;
+        return -1;
     }
 
     // check if the number is not in the range of the source base
-    for (int k = 0; k < strlen(x); k++)
+    for (int k = 0; k < strlen(str); k++)
     {
-        if (x[k] - '0' >= s)
+        if (str[k] - '0' >= s)
         {
-            printf("cannot convert!\n");
-            return 0;
+            return -1;
         }
     }
 
@@ -25,10 +27,10 @@ int convert(char x[256], int s, int t)
     // convert the source number to decimal
     int decimalNumber = 0;
     int i = 0;
-    int len = strlen(x);
+    int len = strlen(str);
     while (i < len)
     {
-        decimalNumber = decimalNumber * s + (x[i] - '0');
+        decimalNumber = decimalNumber * s + (str[i] - '0');
         i++;
     }
 
@@ -52,26 +54,28 @@ int convert(char x[256], int s, int t)
         target_number_str[i - j - 1] = temp;
         j++;
     }
-    
-    // print the target number
-    printf("%s in base %d is %s in base %d \n", x, s, target_number_str, t);
-
-    return 0;
+    // convert char to long long number and return
+    return atoll(target_number_str);
 }
 
 int main()
 {
-    char number[256];
+    long long int number;
     int source, target;
 
     printf("Enter a number: ");
-    scanf("%s", number);
+    scanf("%lli", &number);
     printf("Enter the source base: ");
     scanf("%d", &source);
     printf("Enter the target base: ");
     scanf("%d", &target);
 
-    convert(number, source, target);
+    long long int res = convert(number, source, target);
+    if(res == -1){
+        printf("\ncannot convert!\n");
+    } else {
+        printf("%lld\n", res);
+    }
 
     return 0;
 }

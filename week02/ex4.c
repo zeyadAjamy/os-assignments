@@ -29,7 +29,7 @@ void countAll(char s[256]) {
 int main(void) {
     char s[256];
     printf("Enter a string: ");
-    scanf("%s", s);
+    scanf("%[^\n]s", s);
     countAll(s);
     return 0;
 }

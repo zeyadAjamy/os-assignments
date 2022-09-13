@@ -1,2 +1,2 @@
-gcc ex1.c -o ex1 # compile the program
+gcc -o ex1 ex1.c -lm # compile the program
 ./ex1 # run the program
