@@ -4,12 +4,25 @@
 
 int convert(char x[256], int s, int t)
 {
-    // convert the source number to decimal
+    // check is the source and target base are valid, [2,10] 
     if (s < 2 || s > 10 || t < 2 || t > 10)
     {
         printf("cannot convert!\n");
         return 0;
     }
+
+    // check if the number is not in the range of the source base
+    for (int k = 0; k < strlen(x); k++)
+    {
+        if (x[k] - '0' >= s)
+        {
+            printf("cannot convert!\n");
+            return 0;
+        }
+    }
+
+
+    // convert the source number to decimal
     int decimalNumber = 0;
     int i = 0;
     int len = strlen(x);
@@ -39,6 +52,7 @@ int convert(char x[256], int s, int t)
         target_number_str[i - j - 1] = temp;
         j++;
     }
+    
     // print the target number
     printf("%s in base %d is %s in base %d \n", x, s, target_number_str, t);
 
