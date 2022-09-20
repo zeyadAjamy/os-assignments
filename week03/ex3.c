@@ -2,28 +2,28 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAX_FILES 256
-#define MAX_SUBDIRS 8
-#define MAX_FILENAME 63
-#define MAX_PATH 2048
+#define MAX_NUM_FILES 256
+#define MAX_SUB_DIRICTORIES 8
+#define MAX_LEN_FILENAME 63
+#define MAX_PATH_LEN 2048
 #define MAX_FILEDATA 1024
 
 struct File {
     int id;
-    char name[MAX_FILENAME];
+    char name[MAX_LEN_FILENAME];
     int size;
     char data[MAX_FILEDATA];
     struct Directory *parent;
 };
 
 struct Directory {
-    struct File *files[MAX_FILES];
-    struct Directory *directories[MAX_SUBDIRS];
+    struct File *files[MAX_NUM_FILES];
+    struct Directory *directories[MAX_SUB_DIRICTORIES];
     int nf;
     int nd;
-    char path[MAX_PATH];
+    char path[MAX_PATH_LEN];
 };
-
+int totalNumFiles = 0;
 void add_to_file(struct File *file, const char *str) {
     strcpy(file->data, str);
     file->size = strlen(str) + 1;
@@ -39,6 +39,10 @@ void pwd_file(struct File *file) {
 }
 
 void add_file(struct File *file, struct Directory *dir) {
+    if(totalNumFiles > MAX_NUM_FILES){
+        printf("Error: Too many files");
+        exit(1);
+    }
     dir->files[dir->nf++] = file;
     file->parent = dir;
 }
@@ -78,14 +82,22 @@ int main() {
 
     append_to_file(ex31, "int main(){printf(\"Hello World!\")}");
 
-    for (int i = 0; i < bin->nf; i++) {
-        pwd_file(bin->files[i]);
-        printf("\n");
-    }
-    for (int i = 0; i < home->nf; i++) {
-        pwd_file(home->files[i]);
-        printf("\n");
+
+    // Print all files in root
+    for (int i = 0; i < root->nd; i++) {
+        for (int j = 0; j < root->directories[i]->nf; j++) {
+            pwd_file(root->directories[i]->files[j]);
+            printf("\n");
+        }
     }
 
+    // Print all files in home
+    for (int i = 0; i < home->nd; i++) {
+        for (int j = 0; j < home->directories[i]->nf; j++) {
+            pwd_file(home->directories[i]->files[j]);
+            printf("\n");
+        }
+    }
+    
     return 0;
 }
