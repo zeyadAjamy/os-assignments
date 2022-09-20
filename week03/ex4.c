@@ -68,11 +68,25 @@ int main()
     int *result2 = aggregate(b, sizeof(int), 5, &intial_value2, multiplyInt);
 
     printf("%d\n", *result2);
+    double intial_value6 = 1;
+    double *result6 = aggregate(a, sizeof(double), 5, &intial_value6, multiplyDouble);
+    printf("%f\n", *result6);
 
     double intial_value3 = 0;
     double *result3 = aggregate(a, sizeof(double), 5, &intial_value3, meanDouble);
 
     printf("%f\n", *result3);
+
+    int intial_value4 = 0;
+    int *result4 = aggregate(b, sizeof(int), 5, &intial_value4, meanInt);
+
+    printf("%d\n", *result4);
+
+    int intial_value5 = 0;
+    int *result5 = aggregate(b, sizeof(int), 5, &intial_value5, addInt);
+
+    printf("%d\n", *result5);
+
 
     return 0;
 }
