@@ -1,0 +1,38 @@
+The results:
+-------------
+1st trial ( n = 3 ): number of process 8 ( 7 children + parent)
+2nd trial ( n = 5 ): number of process 32 ( 31 children + parent)
+
+Conclusion:
+------------
+Number of process without the parent is ( 2^(n) - 1 ).
+
+Possiple explanation:
+---------------------
+For the simple case ( n = 3 ), the parent calls fork for each iteration; that means 3 calls.
+For i = 0 - first fork, the child process will continue the running the loop with i = 1, that leads to 2 additional forks. 
+Similarly, i = 1 -> 1 additional fork, and i = 2 -> 0 additional fork.
+
+That explan why the result is 7 children.
+
+Another way to state that :)
+-----------------------------
+
+
+| ------- |
+| parent  |--- fork -----> |--------|
+| i=0     |                | child  |--- fork --> |-------|
+| i=1     |--- fork ------ | i=1    |             | child |
+| i=2     |              | | i=2    |--- fork --  | i=2   |--- fork --> |-------|
+|---------|--- fork --   | |--------|          |  |-------|             | child |
+                     |   |                     |                        |-------|
+                     ˅   ˅                     ˅ 
+                |------||------|          |-------|    
+                |child ||child |          | child |
+                |------||i=2   |          |-------|
+                        |------|
+                            |
+                            ˅
+                        |-------|
+                        | child |
+                        |-------|
