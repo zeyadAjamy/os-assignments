@@ -5,7 +5,7 @@ The results:
 
 Conclusion:
 ------------
-Number of process without the parent is ( 2^(n) - 1 ).
+Number of processes without the parent is ( 2^(n) - 1 ).
 
 Possiple explanation:
 ---------------------
@@ -17,7 +17,6 @@ That explan why the result is 7 children.
 
 Another way to state that :)
 -----------------------------
-
 
 | ------- |
 | parent  |--- fork -----> |--------|

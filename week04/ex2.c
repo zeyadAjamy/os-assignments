@@ -8,9 +8,14 @@
 int main()
 {
     int n;
-    printf("Enter the number of processes: ");
+    printf("Number of Processes: ");
     scanf("%d", &n);
     int u[120], v[120];
+
+
+    // Clear the temp.txt
+    fclose(fopen("temp.txt", "w"));
+
     for (int i = 0; i < 120; i++)
     {
         u[i] = rand() % 100;

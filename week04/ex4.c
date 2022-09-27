@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
     char *args[2];
 
     while (1) {
-        printf("xp> ");
+        printf("xp: $ ");
         command = malloc(100);
         fgets(command, 100, stdin);
         command[strlen(command) - 1] = '\0';
@@ -22,13 +22,14 @@ int main(int argc, char *argv[])
         args[0] = command;
         args[1] = NULL;
 
-        if (fork() == 0) {
-            // run the command in background
+        // execute the command in a child process
+        pid_t pid = fork();
+        if (pid == 0) {
             execvp(command, args);
-            perror("Error");
-            exit(1);
+            printf("Command not found\n");
+            exit(0);
         } else {
-            wait(NULL);
+            waitpid(pid, NULL, 0);
         }
     }
 
