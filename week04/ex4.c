@@ -7,31 +7,34 @@
 int main(int argc, char *argv[])
 {
     char *command;
-    char *args[2];
+    char *args[3];
 
     while (1) {
-        printf("xp: $ ");
+        printf("xp> ");
         command = malloc(100);
         fgets(command, 100, stdin);
+
         command[strlen(command) - 1] = '\0';
 
         if (strcmp(command, "exit") == 0) { // if user types exit, exit
             break;
         }
 
-        args[0] = command;
-        args[1] = NULL;
-
-        // execute the command in a child process
-        pid_t pid = fork();
-        if (pid == 0) {
-            execvp(command, args);
-            printf("Command not found\n");
-            exit(0);
+        // split the command into the command and the argument
+        args[0] = strtok(command, " ");
+        args[1] = strtok(NULL, " ");
+        args[2] = NULL;
+        int s = 0;
+        if (fork() == 0) {
+            execvp(args[0], args);
+            printf("Unknown command\n");
+            exit(1);
         } else {
-            waitpid(pid, NULL, 0);
+            wait(NULL);
         }
+
+        free(command);
     }
 
     return 0;
-}
+} 
