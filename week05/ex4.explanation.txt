@@ -1,3 +1,9 @@
 Explanation:
 -------------
-the sys time is increasing as 
+(+) The sys time increases by increasing the syscalls caused by thread creation and destruction.
+(+) the real time tends to decrease as the threads are executing in parallel the real time is decreasing with the number of threads.
+(+) The user time tends to increase as it is the total time ouside the kernal within the process 
+
+Comparision with Ex3:
+---------------------
+(+) the sys time in the 4th is over all greater than the 3rd as the 4th has malloc the counts in the sys time.

@@ -1,7 +1,9 @@
 Explanation:
 -------------
-(+) The sys time is about zero because the program is not doing alot of system calls, it is only doing some calculations and creating threads.
-(+) The real time is increasing with the number of threads because the program is doing more calculations, and the more threads it has,
-    the more calculations it has to do. Also, it takes more time to create a thread and destroy it, so the more threads it has, the more time it takes to create and destroy them.
-(+) The user time is the time spent in the user mode thus the time spent in the program itself. And we know that the threads execute in parallel, 
-    so the real time is decreasing with the number of threads.
+(+) The sys time is about zero because the program is not doing alot of  system calls, it is only doing some calculations and creating threads.
+    However, it slightly increases when the number of threads increases.
+(+) The user time is increasing with the number of threads.  Means outside the kernal mode, thus it is not counting the operation done in the kernal 
+    thus it decreasing with the number of threads. and this explain why the slight increase in the sys time.
+(+) The real time is the time taken from the start to the end of execution and it remove the time used by other process and it.
+    that means as the threads are executing in parallel the real time is decreasing with the number of threads.
+
