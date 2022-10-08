@@ -6,4 +6,3 @@ Explanation:
     thus it decreasing with the number of threads. and this explain why the slight increase in the sys time.
 (+) The real time is the time taken from the start to the end of execution and it remove the time used by other process and it.
     that means as the threads are executing in parallel the real time is decreasing with the number of threads.
-
