@@ -1,9 +1,3 @@
-// Write a program ex3.c to simulate the round robin algorithm,
-// which should show the same metrics as the two previous programs.
-
-// Note: for this algorithm, the quantum should be specified by the
-// user from stdin.
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -40,10 +34,12 @@ int main(int argc, char *argv[])
         scanf("%d", &bt[i]);
     }
 
-    // sort the processes based on the burst time
+    // sort the processes based on the arriving time
     for (i = 0; i < n; i++)
+    {
         for (j = i + 1; j < n; j++)
-            if (bt[i] > bt[j])
+        {
+            if (at[i] > at[j])
             {
                 temp = at[i];
                 at[i] = at[j];
@@ -53,59 +49,63 @@ int main(int argc, char *argv[])
                 bt[i] = bt[j];
                 bt[j] = temp;
             }
-
-    // calculate completion time
-    ct[0] = at[0] + bt[0];
-    for (i = 1; i < n; i++)
-        ct[i] = ct[i - 1] + bt[i];
-
-    // calculate turnaround time and waiting time
-    for (i = 0; i < n; i++)
-    {
-        tat[i] = ct[i] - at[i];
-        wt[i] = tat[i] - bt[i];
+        }
     }
-
-    // calculate average turnaround time and waiting time
 
     // Get the quantum and on enter, print the metrics
     printf("Enter the quantum: ");
     while (scanf("%d", &quantum) == 1)
         break;
 
-    int rem_bt[n];
-    for (i = 0; i < n; i++)
-        rem_bt[i] = bt[i];
-
-    int t = 0;
-    while (1)
+    // Round robin algorithm
+    int time = 1;
+    int *ready_queue = (int *)malloc(n * sizeof(int));
+    int *bt_copy = (int *)malloc(n * sizeof(int));
+    int remaining = n;
+    // Round robin algorithm consdiering the arrival time of the processes
+    for(i = 0; i < n; i++)
     {
-        int done = 1;
+        bt_copy[i] = bt[i];
+    }
+    int min_bt = 9999, min_bt_index = 0;
+    while (remaining > 0)
+    {
         for (i = 0; i < n; i++)
         {
-            if (rem_bt[i] > 0)
+            if (at[i] <= time && bt_copy[i] < min_bt && bt_copy[i] > 0)
             {
-                done = 0;
-                if (rem_bt[i] > quantum)
-                {
-                    t += quantum;
-                    rem_bt[i] -= quantum;
-                }
-                else
-                {
-                    t = t + rem_bt[i];
-                    wt[i] = t - bt[i];
-                    rem_bt[i] = 0;
-                }
+                min_bt = bt_copy[i];
+                min_bt_index = i;
             }
         }
-        if (done == 1)
-            break;
+        if (min_bt == 9999)
+        {
+            time++;
+            continue;
+        }
+        if (bt_copy[min_bt_index] <= quantum)
+        {
+            time += bt_copy[min_bt_index];
+            bt_copy[min_bt_index] = 0;
+            remaining--;
+            ct[min_bt_index] = time;
+        }
+        else
+        {
+            bt_copy[min_bt_index] -= quantum;
+            time += quantum;
+        }
+        min_bt = 9999;
     }
 
+    // Calculate the turn around time and waiting time
     for (i = 0; i < n; i++)
-        tat[i] = bt[i] + wt[i];
+    {
+        tat[i] = ct[i] - at[i];
+        wt[i] = tat[i] - bt[i];
+    }
 
+    // calculate the average turnaround time and waiting time
     avg_tat = 0;
     avg_wt = 0;
     for (i = 0; i < n; i++)

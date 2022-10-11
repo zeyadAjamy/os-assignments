@@ -1,24 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int argc, char *argv[])
+int main()
 {
     int n = 0, i = 0, j, k, temp;
     int *at, *bt, *ct, *tat, *wt;
     float avg_tat, avg_wt;
 
-    if(argc < 2) {
-        printf("At least two arguments are required \n");
-        return 1;
-    } else if (atoi(argv[1]) < 1) {
-        printf("At least one process is required \n");
-        return 1;
-    } else if (argc - 1 < atoi(argv[1])*2) {
-        printf("At least %d arguments are required \n", atoi(argv[1])*2 + 1 );
-        return 1;
+    printf("Enter the number of processes: ");
+    while(scanf("%d", &n) != 1 || n <= 0)
+    {
+        printf("Invalid input. Please enter a positive integer: ");
     }
-
-    n = atoi(argv[1]);
 
     at = (int *)malloc(n * sizeof(int));
     bt = (int *)malloc(n * sizeof(int));
@@ -28,14 +21,22 @@ int main(int argc, char *argv[])
 
     // Get the arrival time and burst time of each process
     for(i = 0; i < n; i++) {
-        at[i] = atoi(argv[i + 1]);
-        bt[i] = atoi(argv[i + 2]);
+        printf("Enter the arrival time of process %d: ", i + 1);
+        while(scanf("%d", &at[i]) != 1 || at[i] < 0)
+        {
+            printf("Invalid input. Please enter a non-negative integer: ");
+        }
+        printf("Enter the burst time of process %d: ", i + 1);
+        while(scanf("%d", &bt[i]) != 1 || bt[i] <= 0)
+        {
+            printf("Invalid input. Please enter a positive integer: ");
+        }
     }
 
-    // sort the processes based on the burst time
+    // sort the processes based on the arrival time then burst time
     for (i = 0; i < n; i++)
         for (j = i + 1; j < n; j++)
-            if (bt[i] > bt[j]) {
+            if (at[i] > at[j]) {
                 temp = at[i];
                 at[i] = at[j];
                 at[j] = temp;
@@ -44,11 +45,46 @@ int main(int argc, char *argv[])
                 bt[i] = bt[j];
                 bt[j] = temp;
             }
+        else if (at[i] == at[j] && bt[i] > bt[j]) {
+            temp = at[i];
+            at[i] = at[j];
+            at[j] = temp;
+
+            temp = bt[i];
+            bt[i] = bt[j];
+            bt[j] = temp;
+        }
     
-    // calculate completion time
-    ct[0] = at[0] + bt[0];
-    for (i = 1; i < n; i++)
-        ct[i] = ct[i - 1] + bt[i];
+    int *ready_queue = (int *)malloc(n * sizeof(int));
+    int time = 0, remaining = n;
+    int min_bt = 9999, min_bt_index = 0;
+    int *done = (int *)malloc(n * sizeof(int));
+    for (i = 0; i < n; i++)
+        done[i] = 0;
+        
+    while (remaining > 0) {
+        for (i = 0; i < n; i++) {
+            if (at[i] <= time && done[i] == 0) {
+                ready_queue[i] = 1;
+                if (bt[i] < min_bt) {
+                    min_bt = bt[i];
+                    min_bt_index = i;
+                }
+            }
+        }
+        if (min_bt == 9999) {
+            time++;
+            continue;
+        }
+        time += min_bt;
+        ct[min_bt_index] = time;
+        tat[min_bt_index] = ct[min_bt_index] - at[min_bt_index];
+        wt[min_bt_index] = tat[min_bt_index] - bt[min_bt_index];
+        done[min_bt_index] = 1;
+        remaining--;
+        min_bt = 9999;
+    }
+    
 
     // calculate turnaround time and waiting time
     for (i = 0; i < n; i++) {

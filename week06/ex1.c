@@ -1,24 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int argc, char *argv[])
+int main()
 {
     int n = 0, i = 0, j, k, temp;
     int *at, *bt, *ct, *tat, *wt;
     float avg_tat, avg_wt;
 
-    if(argc < 2) {
-        printf("At least two arguments are required\n");
-        return 1;
-    } else if (atoi(argv[1]) < 1) {
-        printf("At least one process is required\n");
-        return 1;
-    } else if (argc - 1 < atoi(argv[1])*2) {
-        printf("At least %d arguments are required\n", atoi(argv[1])*2 + 1 );
-        return 1;
+    printf("Enter the number of processes: ");
+    while(scanf("%d", &n) != 1 || n <= 0)
+    {
+        printf("Invalid input. Please enter a positive integer: ");
     }
-
-    n = atoi(argv[1]);
 
     at = (int *)malloc(n * sizeof(int));
     bt = (int *)malloc(n * sizeof(int));
@@ -28,8 +21,16 @@ int main(int argc, char *argv[])
     
     // Get the arrival time and burst time of each process
     for(i = 0; i < n; i++) {
-        at[i] = atoi(argv[i + 1]);
-        bt[i] = atoi(argv[i + 2]);
+        printf("Enter the arrival time of process %d: ", i + 1);
+        while(scanf("%d", &at[i]) != 1 || at[i] < 0)
+        {
+            printf("Invalid input. Please enter a non-negative integer: ");
+        }
+        printf("Enter the burst time of process %d: ", i + 1);
+        while(scanf("%d", &bt[i]) != 1 || bt[i] <= 0)
+        {
+            printf("Invalid input. Please enter a positive integer: ");
+        }
     }
 
     // sort the processes based on arrival time
