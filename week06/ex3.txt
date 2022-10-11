@@ -8,34 +8,38 @@ The Reuslts of the algorithms:
 -----------
 Process AT      BT      CT      TAT     WT
 1       1       1       2       1       0
-2       1       2       4       3       1
-3       3       1       5       2       1
-Average Turnaround time: 2.000000
-Average Waiting time: 0.666667
+2       2       1       3       1       0
+3       3       3       6       3       0
+Average Turnaround time: 1.666667
+Average Waiting time: 0.000000
 
 [+] SJF:
 -----------
 Process AT      BT      CT      TAT     WT
-1       3       1       4       1       0
-2       1       1       5       4       3
-3       1       2       7       6       4
-Average TAT: 3.666667 
-Average WT: 2.333333 
+1       1       1       2       1       0
+2       2       1       3       1       0
+3       3       3       6       3       0
+Average TAT: 1.666667 
+Average WT: 0.000000 
 
 [+] RR:
 -----------
-Process AT      BT      CT      TAT     WT
-1       1       1       2       1       0
-2       2       1       3       2       1
-3       3       3       6       5       2
-Average Turnaround Time: 2.666667
-Average Waiting Time: 1.000000
+Quantum: 1
+Process AT      BT      CT      TT      WT
+1       1       1       2       1       0 
+2       2       1       3       1       0 
+3       3       3       6       3       0 
+Average waiting time: 0.000000
+Average turnaround time: 3.333333
+
+Comparison:
+---------------------------------------
+FCFS: 1.666667
+SJF: 1.666667
+RR: 3.333333
+
+The results are the same for FCFS and SJF, but RR is different.
 
 Explanation:
 ---------------------------------------
-(+) FCFS: The first process is executed first, then the second and the third. The average turnaround time is 2 and the average waiting time is 0.66.
-(+) SJF: The second process is executed first, then the first and the third. The average turnaround time is 3.66 and the average waiting time is 2.33.
-(+) RR: The first process is executed first, then the second and the third. The average turnaround time is 2.66 and the average waiting time is 1.
-
-(+) The results of the algorithms are different because the order of the processes is different. The first process is executed first in FCFS, 
-    the second in SJF and the first in RR.
+The reason for this is that the RR algorithm is not preemptive, so the process with the shortest burst time will not be executed first. The process with the shortest burst time will be executed first only if it arrives first. In this case, the process with the shortest burst time is the last one to arrive, so it will be executed last.
