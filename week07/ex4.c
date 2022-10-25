@@ -26,4 +26,5 @@ void * amazing_realloc(void * pointer, size_t old_size, size_t new_size){
     // Deallocate the memory, so the TAs cannot find memory leaks, vol2:)
     free(pointer);
     return new_ptr;
+    
 }
