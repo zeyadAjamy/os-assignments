@@ -4,13 +4,10 @@
 int main () {
     char **s;
     char foo[] = "Hello World";
-    s = (char **) malloc(sizeof(char *));
-    *s = foo;
+    *s = (char *) foo;
     printf("s is %s\n", *s);
-    s[0] = foo;
-    printf("s[0] is %s\n", s[0]);
+    s[0] = *foo;
 
-    // Free memory
-    free(s);
-    return(0);
+    printf("s[0] is %c\n" , s[0]);
+    return (0) ;
 }
