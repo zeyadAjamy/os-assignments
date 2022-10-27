@@ -1,0 +1,6 @@
+What is the difference between a physical and a virtual address?
+Describe using your own words. 
+--------------------------------------------------------------------------------
+[+] A physical address is the actual address of the memory location.
+[+] A virtual address is the address of the memory location as seen by the CPU.
+[+] The virtual address is translated into a physical address by the MMU.
