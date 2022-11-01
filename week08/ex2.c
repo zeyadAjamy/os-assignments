@@ -28,5 +28,4 @@ int main() {
 
 // using top:
 //--------------
-// For 10 MB no change in memory usage, however for 1 GM
-// the memory usage is increasing and then the process is killed by OOM killer.
+// For 10 MB no change in memory usage, however for 1 GB the memory usage increased and then the process is killed by OOM killer.
