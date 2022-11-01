@@ -3,4 +3,5 @@ Explain your computations.
 -----------------------------------------------------------------------------------------------------------------------------
 
 The number of entries needed for a single-level linear page table is 2^16/2^13 = 2^3 = 8.
-where 2^16 is the number of virtual addresses and 2^13 is the number of bytes in a page.
+[+] 2^16 is the number of virtual addresses and 2^13 is the number of bytes in a page.
+[+] 2^3 is the number of entries needed for a single-level linear page table.
