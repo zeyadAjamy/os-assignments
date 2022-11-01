@@ -6,8 +6,9 @@
 
 int main() {
     size_t memSize = 10 * 1024 * 1024;
+    void *ptr;
     for (int i = 0; i < 10; i++) {
-        void *ptr = malloc(memSize);
+        ptr = malloc(memSize);
         memset(ptr, 0, memSize);
         sleep(1);
         struct rusage usage;
@@ -18,5 +19,6 @@ int main() {
         printf("Integral unshared data size: %ld\n", usage.ru_idrss);
         printf("Integral unshared stack size: %ld\n", usage.ru_isrss);
     }
+    free(ptr);
     return 0;
 }
