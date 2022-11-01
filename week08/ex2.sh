@@ -9,3 +9,6 @@ gcc ex2.c -o ex2
 
 # Run ’vmstat 1 ’
 vmstat 1
+
+# remove the executable file
+rm ex2
