@@ -1,0 +1,21 @@
+Consider the following sequence:
+---------------------------------
+
+[+] 0 1 2 4 5 6 7 8 9 0 0 0 0 1 2 3
+[+] If we have 7 page frames, then the hit/miss ratio is 0.230769. This because aging aging counter got a limited number of bits (8 bits in our case).
+    Therefore, the reference bit of the page 0 is 0, and the page 0 is replaced by the page 8. then it will encounter a miss after ther reference 9.
+
+However, if we changed the sequence to:
+[+] 0 1 2 4 5 6 7 0 9 0 0 0 0 1 2 3
+[+] we will increase the hit/miss ratio to 0.454545.
+
+Moreover, if we changed the sequence to:
+[+] 0 1 2 4 5 6 0 8 1 0 0 0 0 1 2 3
+[+] we will got a hit/miss ratio of 1. for the same resone as above.
+
+---------------------------------
+Alternative funny solution 
+---------------------------------
+
+[+] 1 2 3 4 5 6 7 8 9 10
+[+] would get 0 hit/miss ratio for 7 frames. As there are not similar references.
