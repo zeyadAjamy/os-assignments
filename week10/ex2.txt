@@ -1,0 +1,6 @@
+The links to the inode number 118249 in the current directory are: 
+../week01/file.txt
+../week10/_ex2.txt
+The removed links are 
+../week01/file.txt
+../week10/_ex2.txt

@@ -1,0 +1,10 @@
+The file _ex3.txt has no excutable permission for all
+-rw-r--r-- 1 xp xp 0 Nov 15 02:52 _ex3.txt
+The file _ex3.txt has all permissions for the owner and others
+-rwxr--rwx 1 xp xp 0 Nov 15 02:52 _ex3.txt
+The file _ex3.txt has all the user permissions for the group
+-rwxrwxrwx 1 xp xp 0 Nov 15 02:52 _ex3.txt
+
+660 means: both the owner and the group have read and write permissions without the excution permission, but others have no permissions
+775 means: the owner and the group have read, write and excute permissions, but others have read and excute permissions without the write permission
+777 means: owner, group, and others have read, write and excute permissions
