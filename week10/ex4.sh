@@ -1,9 +1,19 @@
+# If the dir doesnot exists remove
 if [ -d tmp ]; then
-    rm -rf tmp
+    rm -r tmp
 fi
+
 mkdir tmp
 
-touch tmp/file1.txt tmp/file2.txt
+touch tmp/file1 tmp/file2
 
 # create a hard link link1.txt to file1.txt
-ln tmp/file1.txt tmp/link1.txt
+ln tmp/file1 tmp/link1
+
+gcc -o ex4 ex4.c
+
+# Run the program
+./ex4
+
+# Remove the binary
+rm ex4

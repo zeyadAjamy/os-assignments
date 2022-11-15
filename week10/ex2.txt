@@ -1,5 +1,5 @@
-The links to the inode number 118128 in the current directory are: 
+The links to the inode number 118186 are: 
 ../week01/file.txt
 ../week10/_ex2.txt
-The removed links from the current directory- week10- are 
+The removed links from the current directory - week10 - is / are 
 ./_ex2.txt

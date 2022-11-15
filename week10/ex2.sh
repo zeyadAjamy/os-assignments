@@ -24,9 +24,9 @@ link ../week01/file.txt _ex2.txt
 inode=$(ls -i ../week01/file.txt | cut -d ' ' -f 1)
 
 # find all the links to the inode number
-echo "The links to the inode number $inode in the current directory are: " >> ex2.txt
+echo "The links to the inode number $inode are: " >> ex2.txt
 find .. -inum $inode >> ex2.txt
 
 # remove the link
-echo "The removed links from the current directory- week10- are " >> ex2.txt
+echo "The removed links from the current directory - week10 - is / are " >> ex2.txt
 find . -inum $inode -exec rm {} \; -print >> ex2.txt

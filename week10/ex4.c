@@ -9,28 +9,32 @@
 int main(){
     char *path = "tmp";
     DIR *dir = opendir(path);
-    if(dir == NULL){
-        perror("opendir");
-        exit(1);
-    }
-    
     struct dirent *entry;
     struct stat st;
     char *files[100];
     int inodes[100];
     int i = 0;
+    // Change the main output stream to ex4.txt
+    FILE *fp = freopen("ex4.txt", "w", stdout);
+
+    if(dir == NULL){
+        perror("opendir");
+        exit(1);
+    }
 
     while((entry = readdir(dir)) != NULL){
         if(entry->d_type == DT_REG){
             char *file = malloc(strlen(path) + strlen(entry->d_name) + 2);
             sprintf(file, "%s/%s", path, entry->d_name);
+            
+            // Handle error
             if(stat(file, &st) == -1){
                 perror("stat");
                 exit(1);
             }
 
-            if (st.st_nlink >= 1) {
-                files[i] = file;
+            if (st.st_nlink > 1) {
+                files[i] = entry->d_name;
                 inodes[i] = st.st_ino;
                 i++;
             }
@@ -55,7 +59,7 @@ int main(){
                     exit(1);
                 }
                 if (st.st_ino == current_inode) {
-                    files[count] = file;
+                    files[count] = entry->d_name;
                     count++;
                 }
             }
@@ -69,4 +73,5 @@ int main(){
             printf("\n");
         }
     }
+    closedir(dir);
 }

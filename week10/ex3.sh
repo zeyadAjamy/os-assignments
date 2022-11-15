@@ -3,7 +3,7 @@ if [ -f _ex3.txt ]; then
 fi
 
 touch _ex3.txt
-
+echo "Zeyad Alagamy" > _ex3.txt
 # Remove the excutable permission from the file for all
 echo "The file _ex3.txt has no excutable permission for all" >> ex3.txt
 chmod a-x _ex3.txt
