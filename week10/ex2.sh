@@ -1,8 +1,8 @@
 if [ ! -d ../week01 ]; then
-    mkdir week01
+    mkdir ../week01
 fi
 if [ ! -d week10 ]; then
-    mkdir ../week10
+    mkdir week10
 fi
 if [ -f _ex2.txt ]; then
     rm _ex2.txt
@@ -28,5 +28,5 @@ echo "The links to the inode number $inode in the current directory are: " >> ex
 find .. -inum $inode >> ex2.txt
 
 # remove the link
-echo "The removed links are " >> ex2.txt
+echo "The removed links from the current directory- week10- are " >> ex2.txt
 find . -inum $inode -exec rm {} \; -print >> ex2.txt

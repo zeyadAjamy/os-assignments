@@ -5,13 +5,14 @@ if [ -f _ex1_1.txt ] | [ -f _ex1_2.txt ] | [ -f ex1.txt ]; then
 fi
 
 # Create the required files
-touch _ex1.txt _ex1_1.txt ex1.txt
+touch _ex1.txt ex1.txt
 
 # Append "Zeyad Alagamy" to _ex1.txt
 echo "Zeyad Alagamy" >> _ex1.txt
 
 # Link _ex1_1.txt to _ex1_2.txt
-ln _ex1_1.txt _ex1_2.txt
+ln _ex1.txt _ex1_1.txt
+ln _ex1.txt _ex1_2.txt
 
 # Append "Zeyad Alagamy" to _ex1_1.txt
 echo "Zeyad Alagamy" >> _ex1_1.txt # "Zeyad Alagamy" is appended to _ex1.txt and _ex1_1.txt
