@@ -10,7 +10,6 @@ sudo mkfs.ntfs $LOOPDEV
 # Remove the lofsdisk directory if it exists
 sudo umount lofsdisk
 sudo rm -rf lofsdisk
-fsck.ntfs -f $LOOPDEV 
 
 # mount the loop device
 mkdir lofsdisk

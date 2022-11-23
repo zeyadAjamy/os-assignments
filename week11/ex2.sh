@@ -26,9 +26,9 @@ for i in $(ldd /bin/cat | grep -o '/.* '); do sudo cp $i lib64/; done
 for i in $(ldd /bin/echo | grep -o '/.* '); do sudo cp $i lib64/; done
 for i in $(ldd /bin/ls | grep -o '/.* '); do sudo cp $i lib64/; done
 
-
 cd ..
 echo "Output with lofsdisk as a root " > ex2.txt
+cp ./ex2.out ./lofsdisk
 sudo chroot lofsdisk ./ex2.out >> ex2.txt
 echo "" >> ex2.txt
 echo "Output without lofsdisk as a root" >> ex2.txt
