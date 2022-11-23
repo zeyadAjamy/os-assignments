@@ -1,0 +1,4 @@
+Output with lofsdisk as a root 
+. .. bin cat ex2.out file1.txt file2.txt lib lib64 
+Output without lofsdisk as a root
+usr sbin home boot lib proc root opt lost+found dev lib64 libx32 mnt .. sys lib32 swapfile snap . tmp etc bin cdrom media run var ex1 srv 
