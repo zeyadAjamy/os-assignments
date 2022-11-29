@@ -28,16 +28,18 @@ int main(int argc, char *argv[])
             {
                 if (ev.value == 1)
                 {
+                    printf("PRESSED 0x%04x (%d) \n", ev.code, ev.code);
                     fprintf(std, "PRESSED 0x%04x (%d) \n", ev.code, ev.code);
                 }
                 else if (ev.value == 0)
                 {
+                    printf("RELEASED 0x%04x (%d) \n", ev.code, ev.code);
                     fprintf(std, "RELEASED 0x%04x (%d) \n", ev.code, ev.code);
                 }
             }
         }
     }
     close(fd);
-    fclose (stdout);
+    fclose(std);
     return 0;
 }
