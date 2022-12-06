@@ -1,1 +1,1 @@
-Deadlocked processes: P2, 
+Deadlocked processes: P1, 

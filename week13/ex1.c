@@ -195,15 +195,25 @@ int main()
     }
 
     // Run the program to the end and update the available resources in case of resources releaseing
+    int safeSequence[process_number];
     for (int i = 0; i < process_number; i++)
     {
+        int satisfied = 0;
         for (int j = 0; j < resources_number; j++)
         {
-            if (allocatedResources[i][j] > requestedResources[i][j])
+            if (allocatedResources[i][j] >= requestedResources[i][j])
             {
-                availableResources[j] += allocatedResources[i][j] - requestedResources[i][j];
+                satisfied++;
             }
         }
+        if (satisfied == resources_number)
+        {
+            for (int j = 0; j < resources_number; j++)
+            {
+                availableResources[j] += allocatedResources[i][j];
+            }
+            safeSequence[i] = i;
+        } 
     }
     int deadlockedProcesses[process_number];
     int deadlockedProcessesNumber = 0;
@@ -213,7 +223,7 @@ int main()
         {
             if (requestedResources[p][r] > availableResources[r])
             {
-                deadlockedProcesses[deadlockedProcessesNumber] = p;
+                deadlockedProcesses[deadlockedProcessesNumber] = p+1;
                 deadlockedProcessesNumber++;
                 break;
             }
