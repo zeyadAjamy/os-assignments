@@ -184,7 +184,9 @@ int main()
             sum += allocatedResources[j][i];
         }
 
-        if (sum > existingResources[i])
+        int expected = availableResources[i] + sum;
+        
+        if (expected != existingResources[i])
         {
             printf("Invalid input formate \n");
             fprintf(fp2, "Invalid input formate \n");

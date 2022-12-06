@@ -1,1 +1,1 @@
-Invalid input formate 
+Deadlocked processes: P0, P1, P2, 
