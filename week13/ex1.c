@@ -142,15 +142,15 @@ int main()
     }
 
     // Get the number of existing resources
-    int existingResources[3];
-    for (int i = 0; i < 3; i++)
+    int existingResources[resources_number];
+    for (int i = 0; i < resources_number; i++)
     {
         existingResources[i] = atoi(&buffer[0][i * 2]);
     }
 
     // Get the number of available resources
-    int availableResources[3];
-    for (int i = 0; i < 3; i++)
+    int availableResources[resources_number];
+    for (int i = 0; i < resources_number; i++)
     {
         availableResources[i] = atoi(&buffer[2][i * 2]);
     }
