@@ -1,0 +1,25 @@
+Recovery: 
+----------
+[+] Basiclly the operation system let the deadlock happen and then try to solve the problem.
+    by preemption or rollback.
+[+] Therefore, if the the resources are preemptible it will work just fine without any previous inspection.
+    Also, it can kill the procces that causes the deadlock. However, procces termination is not a good solution. As 
+    it can cause a lot of problems, such as data loss.
+
+Prevention:
+------------
+[+] Avoid the deadlock by making sure that the four conditions are not met.
+[+] The four conditions are:
+    1. Mutual Exclusion: Only one process can use a resource at a time.
+    2. Hold and Wait: A process is holding at least one resource and waiting for resources held by other processes.
+    3. No Preemption: A resource can be released only voluntarily by the process holding it, after the process has 
+       completed its task.
+    4. Circular Wait: There is a set of processes {P0, P1, P2, ..., Pn} such that P0 is waiting for a resource
+[+] Thus, for the non-preemptible resource it will be much better than procces termination or rolling back as in recovery.
+[+] Nevertheless, it limits the system performance as it will not allow the system to use the resources in the best way.
+
+Avoidance:
+-----------
+
+[+] The best option for solving the deadlock problem as it does not limit the system resources.
+[+] It requires smart scheduling algorithms as it requires some information to be available beforehand.
